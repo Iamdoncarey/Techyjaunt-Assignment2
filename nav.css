@@ -1,0 +1,93 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body style */
+body {
+    background-color: rgb(0, 219, 219);
+    font-size: 16px;
+    margin: 40px;
+}
+
+/* Navigation styles */
+.responsive-nav {
+    color: white;
+    padding: 0;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* the toggle icon styles */
+.menu-toggle {
+    display: none; 
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* this styles affect just the children of the nav parent*/
+#menu {
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+
+/* anchor tag styles */
+#menu a {
+    color: rgb(128, 4, 4);
+    text-decoration: none;
+    padding: 5px;
+    font-size: 1.3rem;
+    margin: 10px;
+    font-weight: 600;
+}
+
+/* This styles happens when the user hovers on the navigation link */
+#menu a:hover{
+    color: rgb(255, 7, 7);
+    border-bottom: 3px solid rgb(248, 248, 248);
+    padding: 1px 0;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* RESPONSIVE STYLES FOR SMALLER SCREENS */
+@media (max-width: 875px) {
+    /* This styles displays the toggle icon on the screen */
+    .menu-toggle {
+        display: block;
+        width: 0;
+    }
+
+    /* This styles removes the navigation links and when the 
+    toggle is clicked its displays in a column format */
+    #menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 50%;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-left: 2px solid rgb(128, 4, 4);
+        border-bottom-left-radius: rem;
+        padding: 1rem;
+    }
+
+    
+
+    #menu a {
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+
+    /* Show menu when clicked */
+    #menu.show {
+        display: block;
+    }
+}
